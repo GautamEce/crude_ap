@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+           <div class="card-header bg-success">
+            <h6>Videos List</h6>
+           </div>
+           <div class="card-body">
+            <div class="row">
+                @for (item of videoList; track $index) {
+                    <div class="col-4 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">{{item.custId}}</h4>
+                              <p class="card-text">{{item.name}}</p>
+                              <p class="card-text">{{item.mobile}}</p>
+                              <p class="card-text">{{item.emailid}}</p>
+                              <p class="card-text">{{item.address}}</p>
+                              <a  class="card-link">
+                                <button (click)="onEdit(item)" class="btn btn-secondary">Edit</button>
+                              </a>
+                              <a  class="card-link">
+                                <button (click)="deleteVideo(item.custId)" class="btn btn-danger">Delete</button>
+                              </a>
+                            </div>
+                          </div>
+                    </div>
+                }
+                
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+           <div class="card-header bg-success">
+            <h5>Videos Form</h5>
+           </div>
+           <div class="card-body">
+            <div class="row">
+                <!-- <div class="col-12">
+                    <label for="">Custemer Id</label>
+                    <input type="text" [(ngModel)]="videoObj.custId" class="form-control">
+                </div> -->
+                <div class="col-12">
+                    <label for="">Name</label>
+                    <input type="text" [(ngModel)]="videoObj.name" class="form-control">
+                </div>
+                <div class="col-12">
+                    <label for="">Mobile No</label>
+                    <input type="text" [(ngModel)]="videoObj.mobile" class="form-control">
+                </div>
+                <div class="col-12">
+                    <label for="">Email Id</label>
+                    <input type="text" [(ngModel)]="videoObj.emailid" class="form-control">
+                </div>
+                <div class="col-12">
+                    <label for="">Address</label>
+                    <input type="text" [(ngModel)]="videoObj.address" class="form-control">
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-6 text-center mt-2" >
+                    <button class="btn btn-secondary">Reset</button>
+                </div>
+                <div class="col-6 text-center mt-2">
+                    @if (videoObj.custId == 0) {
+                        <button class="btn btn-success" (click)="onSaveVideo()">Save</button>
+                    }@else {
+                        <button class="btn btn-warning" (click)="onUpdateVideo()">Update</button>
+                    }
+                   
+                </div>
+            </div>
+            
+           </div>
+        </div>
+    </div>
+</div>

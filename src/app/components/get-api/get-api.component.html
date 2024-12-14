@@ -1,0 +1,45 @@
+
+<div class="row">
+    <div class="col-4">
+        <ul>
+            @for (item of  userList; track $index) {
+                <li>{{item.name}}-{{item.email}}-{{item.username}}</li>
+            }
+        </ul>
+         <button class="btn btn-success" (click)="getUsers()">GetUser</button>
+    </div>
+     <div class="col-4">
+    <h2 class="mb-4">Basic Bootstrap Table</h2>
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>S No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of  userList; track $index){
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.username}}</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        <button class="btn btn-success" (click)="getUsers()">GetEmp</button>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col-5">
+        <ul>
+            @for (item of  userList; track $index) {
+                <li>{{item.name}}-{{item.email}}-{{item.username}}</li>
+            }
+        </ul>
+    </div>
+</div> -->
