@@ -12,7 +12,7 @@ export class VideoModel {
         this.mobile = '';
         this.emailid = '';
         this.address = '';
-       this.city ='';
+       
 
     }
 }
